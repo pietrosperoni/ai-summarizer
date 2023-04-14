@@ -3,3 +3,5 @@
 /index.html
 /noarch
 .env
+*.egg-info
+.DS_Store
