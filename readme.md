@@ -1,6 +1,7 @@
 # AI Summarizer
 
-AI Summarizer is a Python package that uses OpenAI's GPT-3.5 to summarize any given text. 
+AI Summarizer is a Python package that uses OpenAI's GPT-3.5 to summarize any given text.
+You can input some text describing what kind of information you are interested in. 
 
 ## Installation
 
