@@ -111,7 +111,7 @@ def html_to_markdown(html_content,ignore_links=True):
 def summarize_text(text:str, filter:str=None, summary_length:int=500,model="gpt-3.5-turbo"):
     markdown_content = html_to_markdown(text)
     summary=recursive_summarize_text(markdown_content, filter, summary_length,model=model)
-    while (len(summary.split())>1000):
+    while (len(summary.split())>summary_length*1.5):
         summary=recursive_summarize_text(summary, filter,summary_length,model=model)
     return summary
 
