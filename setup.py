@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="AI-Summarizer",
-    version="1.0.0",
+    version="1.0.1",
     description="""AI Summarizer is a Python package that uses OpenAI's GPT-3.5 to summarize any given text.
     You can input some text describing what kind of information you are interested in. 
     When the text is too long it splits it logically into different sections, to make it simpler to summarise""",
@@ -28,7 +28,7 @@ setup(
         "Topic :: Text Processing",
         "Topic :: Text Processing :: Filters",
         "Topic :: Text Processing :: Markup",
-        "Topic :: Text Processing :: HTML",
+        "Topic :: Text Processing :: Markup :: HTML",
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
     ],
 )
