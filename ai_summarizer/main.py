@@ -49,7 +49,7 @@ def _recursive_merge_summarises_new(summary_1: str, summary_2: str):
     result="\n# \n"+summary_1+"\n# \n"+summary_2
     return result
 
-def _recursive_summarize_text(text: str, filter: str = None, summary_length: int = 500,model="gpt-3.5-turbo"):
+def _recursive_summarize_text(text: str, filter: str = None, summary_length: int = 500,model="gpt-3.5-turbo",max_number_tokens=4096):
     if filter:
         prompt_content = f"""I need you to summarise some text which is part of a bigger document. 
             You should summarise the text by filtering out what does not follows this guidelines: 
@@ -74,7 +74,7 @@ def _recursive_summarize_text(text: str, filter: str = None, summary_length: int
             Don't repeat yourself"""
         
     n_tokens=get_number_of_tokens(prompt_content,model=model)
-    if n_tokens>4096:
+    if n_tokens>max_number_tokens:
         text_1,text_2=split_text_logically(text)
         summary_1=_recursive_summarize_text(text_1, filter, summary_length=summary_length,model=model)
         summary_2=_recursive_summarize_text(text_2, filter, summary_length=summary_length,model=model)
