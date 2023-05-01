@@ -36,7 +36,7 @@ summary_length = 500
 
 model = "gpt-3.5-turbo"
 
-summary = summarize_text(text, filter=filter, summary_length=summary_length, model=model)
+summary = summarize_text(text, filter=filter, summary_length=summary_length, model=model, max_number_tokens=4096)
 
 print(summary)
 ```

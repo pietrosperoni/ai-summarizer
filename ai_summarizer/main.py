@@ -108,9 +108,9 @@ def html_to_markdown(html_content,ignore_links=True):
     markdown_text = html_converter.handle(html_content)
     return markdown_text
 
-def summarize_text(text:str, filter:str=None, summary_length:int=500,model="gpt-3.5-turbo"):
+def summarize_text(text:str, filter:str=None, summary_length:int=500,model="gpt-3.5-turbo",max_number_tokens=4096):
     markdown_content = html_to_markdown(text)
-    summary=_recursive_summarize_text(markdown_content, filter, summary_length,model=model)
+    summary=_recursive_summarize_text(markdown_content, filter, summary_length,model=model,max_number_tokens=max_number_tokens)
     while (len(summary.split())>summary_length*1.5):
         summary=_recursive_summarize_text(summary, filter,summary_length,model=model)
     return summary
